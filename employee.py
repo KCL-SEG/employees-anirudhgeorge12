@@ -30,14 +30,14 @@ class Employee:
             if self.bonusCommission == 0 and self.contractCommission == 0:
                 return f'{self.name} works on a monthly salary of {self.salaryContract}. Their total pay is {self.get_pay()}.'
             elif self.bonusCommission == 0:
-                return f'{self.name} works on a monthly salary of{self.salaryContract} and receives a commission for 4 contract(s) at 200/contract. Their total pay is {self.get_pay()}.'
+                return f'{self.name} works on a monthly salary of {self.salaryContract} and receives a commission for {self.numberOfContracts} contract(s) at {self.contractCommission}/contract. Their total pay is {self.get_pay()}.'
             else:
                 return f'{self.name} works on a monthly salary of {self.salaryContract} and receives a bonus commission of {self.bonusCommission}. Their total pay is {self.get_pay()}.'
         else:
             if self.bonusCommission == 0 and self.contractCommission == 0:
                 return f'{self.name} works on a contract of {self.hours} hours at {self.hourlyContract}/hour. Their total pay is {self.get_pay()}.'
             elif self.bonusCommission == 0:
-                return f'{self.name} works on a contract of {self.hours} hours at {self.hourlyContract}/hour. Their total pay is {self.get_pay()}.'
+                return f'{self.name} works on a contract of {self.hours} hours at {self.hourlyContract}/hour and receives a commision for {self.numberOfContracts} contract(s) at {self.contractCommission}/contract. Their total pay is {self.get_pay()}.'
             else:
                 return f'{self.name} works on a contract of {self.hours} hours at {self.hourlyContract}/hour and receives a bonus commission of {self.bonusCommission}. Their total pay is {self.get_pay()}.'
 
@@ -48,18 +48,14 @@ billie = Employee('Billie', 4000, 0, 0, 0)
 charlie = Employee('Charlie', 0, 25, 0, 0)
 charlie.set_hours(100)
 
-
-
 # Renee works on a monthly salary of 3000 and receives a commission for 4 contract(s) at 200/contract.  Their total pay is 3800.
 renee = Employee('Renee', 3000, 0, 0, 200)
 renee.set_contracts(4)
-
 
 # Jan works on a contract of 150 hours at 25/hour and receives a commission for 3 contract(s) at 220/contract.  Their total pay is 4410.
 jan = Employee('Jan', 0, 25, 0, 220)
 jan.set_hours(150)
 jan.set_contracts(3)
-
 
 # Robbie works on a monthly salary of 2000 and receives a bonus commission of 1500.  Their total pay is 3500.
 robbie = Employee('Robbie', 2000, 0, 1500, 0)
